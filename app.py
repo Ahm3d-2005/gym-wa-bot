@@ -7,7 +7,7 @@ app = Flask(__name__)
 # ========== CONFIGURATION ==========
 # Replace with your actual values from Meta
 PHONE_NUMBER_ID = "1059667987236268"   # Your test number ID
-ACCESS_TOKEN = "YOUR_ACCESS_TOKEN_HERE"  # Paste your temporary token
+ACCESS_TOKEN = "EAAgSVdSxtf0BRW5gLOWeHxUT75mxtRcqnFVTUPpZBVzXbVEmL9pZAAdZANI0Ndqd2n87qnMZAVgL1DLlz8FjH2RFD9cxTy8unELQdar1d2NTBOo8zjtoZC88bpjseKET2mVeHUYBZBku5rnZCqZAgL5UyPn17Fk4ofwrxnfOowwsTJv1Cgs2I3Pvpu0YahTdw5gdgEd1RV6LuSWA7ksH9kZBK6ZBfeLw1Y3tpTQJpS6TEvodWKqkZCxUtaJ2gZAIZAZCiKqK8xA7929AXJ4uhFw5yfHZCW2xkHo"  # Paste your temporary token
 
 # WhatsApp API endpoint
 WHATSAPP_API_URL = f"https://graph.facebook.com/v20.0/{PHONE_NUMBER_ID}/messages"
