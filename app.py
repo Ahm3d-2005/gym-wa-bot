@@ -72,7 +72,6 @@ def webhook():
     print("========================\n")
     
     try:
-        # Extract message
         entry = data["entry"][0]
         changes = entry["changes"][0]
         value = changes["value"]
@@ -84,26 +83,14 @@ def webhook():
         msg = messages[0]
         user_number = msg["from"]
         
-        # Check for button reply
-        if "interactive" in msg and msg["interactive"]["type"] == "button_reply":
-            button_id = msg["interactive"]["button_reply"]["id"]
-            print(f"Button pressed: {button_id}")
-            
-            if button_id == "hours":
-                send_back_menu(user_number, "🏋️ Hours: 6 AM – 10 PM (Mon-Sat). Closed Sunday.\n📍 Location: Main Street, near City Hospital.")
-            elif button_id == "plans":
-                send_back_menu(user_number, "💪 Membership Plans:\n1 Month: $30\n3 Months: $80\n12 Months: $280\n\nTo purchase, tap 'Buy Membership' on main menu.")
-            elif button_id == "buy":
-                send_back_menu(user_number, "💰 Payment Instructions:\nBank: ABC Bank\nAccount: 1234-5678-90\nName: Gym Owner\n\nSend payment & share screenshot. We'll activate within 1 hour.")
-            elif button_id == "menu":
-                send_main_menu(user_number)
-            else:
-                send_main_menu(user_number)
+        # === FORCED TEST: send a plain text message first ===
+        headers = {"Authorization": f"Bearer {ACCESS_TOKEN}", "Content-Type": "application/json"}
+        test_data = {"messaging_product": "whatsapp", "to": user_number, "type": "text", "text": {"body": "🔧 Bot received your message. Now loading menu..."}}
+        requests.post(WHATSAPP_API_URL, headers=headers, json=test_data)
+        # ====================================================
         
-        # Text message -> show main menu
-        elif "text" in msg:
-            print(f"Text message: {msg['text']['body']}")
-            send_main_menu(user_number)
+        # Now try to send the main menu (buttons)
+        send_main_menu(user_number)
         
     except Exception as e:
         print("ERROR in webhook:")
