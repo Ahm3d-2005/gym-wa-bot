@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 # ===== CONFIGURATION =====
 # ⚠️ IMPORTANT: Replace with your actual details
-PHONE_NUMBER_ID = "1059667987236268"
+PHONE_NUMBER_ID = "1114308051764214"
 ACCESS_TOKEN = "EAAgSVdSxtf0BRWpSh2qcxZC2kh32cezwUkzxFzM6eW3jlsuL7Mye35foCVwIKWjYK7HCV2I1cnPJnemhdj349V7g0WQw7Whw7ZBzKDyb38hMlUY7Pyu5bVqN4TGcdhqRk3xaf4shtqnGCgNFbRwyqwigG0BP5x5DUgQDZCka0q9vh31AqbzZAqkWt4GP9VGZCHgZDZD"
 
 WHATSAPP_API_URL = f"https://graph.facebook.com/v20.0/{PHONE_NUMBER_ID}/messages"
@@ -32,7 +32,7 @@ def send_main_menu(to):
         "type": "interactive",
         "interactive": {
             "type": "button",
-            "body": {"text": "🏋️ Welcome to GymBot! Always here for you. Please choose an option:"},
+            "body": {"text": "🏋️ Welcome to GymBot by Ahmed ! Always here for you. Please choose an option:"},
             "action": {
                 "buttons": [
                     {"type": "reply", "reply": {"id": "hours", "title": "📍 Hours & Location"}},
