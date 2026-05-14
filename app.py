@@ -9,7 +9,7 @@ app = Flask(__name__)
 # ===== CONFIGURATION =====
 # Updated to match the ID in your screenshots
 PHONE_NUMBER_ID = "1114308051764214" 
-ACCESS_TOKEN = "EAAgSVdSxtf0BRQZA5EWYbQbeiro6wUzzomAyJFG1WPdUYXpeLx9rhyzFRCqrZBtKs4Fu5rRvCgy1vnBQZCI9ZBZBHDTG1QwA2aRj5SpEY8MrbPrxnaAvnOkcxXV1PbsHqkXZAj01zB9n8GeyZBBiJPn1tdpgCFSESoxWMev84zvdTVoGpoId8AJFonVb8rqZCLP6Y2TQj0MBSIZCWDvXkZC4RqpwZA0PfYZB8kMiwSecIH3VpYYZCYSsHgAq7M9LveRnXfMBZBkeDESd2rg98XNBDznjUbAyyO"
+ACCESS_TOKEN = os.environ.get("WHATSAPP_TOKEN")
 
 WHATSAPP_API_URL = f"https://graph.facebook.com/v25.0/{PHONE_NUMBER_ID}/messages"
 
