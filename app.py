@@ -11,7 +11,7 @@ app = Flask(__name__)
 PHONE_NUMBER_ID = "1114308051764214" 
 ACCESS_TOKEN = "EAAgSVdSxtf0BRWpSh2qcxZC2kh32cezwUkzxFzM6eW3jlsuL7Mye35foCVwIKWjYK7HCV2I1cnPJnemhdj349V7g0WQw7Whw7ZBzKDyb38hMlUY7Pyu5bVqN4TGcdhqRk3xaf4shtqnGCgNFbRwyqwigG0BP5x5DUgQDZCka0q9vh31AqbzZAqkWt4GP9VGZCHgZDZD"
 
-WHATSAPP_API_URL = f"https://graph.facebook.com/v20.0/{PHONE_NUMBER_ID}/messages"
+WHATSAPP_API_URL = f"https://graph.facebook.com/v25.0/{PHONE_NUMBER_ID}/messages"
 
 # Helper to send text
 def send_text(to, text):
